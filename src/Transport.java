@@ -1,12 +1,12 @@
 public abstract class Transport {
     private int id;
     private double speed;
-    private double сapacity;
+    private double capasity;
 
     public Transport(int id, double speed, double capacity){
         this.id = id;
         this.speed = speed;
-        this.сapacity = capacity;
+        this.capasity = capacity;
     }
 
     public abstract double calculateTime(double distance);
@@ -24,7 +24,7 @@ public abstract class Transport {
         return id;
     }
 
-    public double getСapacity() {
-        return сapacity;
+    public double getCapasity() {
+        return capasity;
     }
 }

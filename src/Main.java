@@ -14,19 +14,19 @@ public class Main {
 
 
         for (Transport transport: transportList){
-            if (transport.getСapacity() >= cargo1.getWeight()){
+            if (transport.getCapasity() >= cargo1.getWeight()){
                 double time = transport.calculateTime(100);//бедный велосипедист
                 System.out.println("Транспорт id:" + transport.getId() + " доставит " + cargo1.getName() + " за " + time + " часов");
 
             }
-            if (transport.getСapacity() >= cargo2.getWeight()){
+            if (transport.getCapasity() >= cargo2.getWeight()){
                 double time = transport.calculateTime(100);//бедный велосипедист
                 System.out.println("Транспорт id:" +  transport.getId() + " доставит " + cargo2.getName() + " за " + time + " часов");
 
             }
-            if (transport.getСapacity() >= cargo2.getWeight()){
+            if (transport.getCapasity() >= cargo3.getWeight()){
                 double time = transport.calculateTime(100);//бедный велосипедист
-                System.out.println("Транспорт id:" + transport.getId() + " доставит " + cargo2.getName() + " за " + time + " часов");
+                System.out.println("Транспорт id:" + transport.getId() + " доставит " + cargo3.getName() + " за " + time + " часов");
 
             }
 
