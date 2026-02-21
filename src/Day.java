@@ -52,4 +52,9 @@ public enum Day {
         return name;
     }
     public abstract String getProverb();
+
+    @Override
+    public String toString(){
+        return (getName() + " - " + getProverb());
+    }
 }
