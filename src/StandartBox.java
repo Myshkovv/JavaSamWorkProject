@@ -10,7 +10,7 @@ public class StandartBox extends Box{
             throw new IllegalArgumentException("Недопустимый обьем");
         } else {
             this.weight = weight;
-            System.out.println("создан стандарт бокс");
+            System.out.println("создан стандарт бокс id:" + getId());
         }
 
 

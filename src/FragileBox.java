@@ -11,7 +11,7 @@ public class FragileBox extends Box{
             throw new IllegalArgumentException("Недопустимый обьем");
         } else {
             this.volume = length * height * width;
-            System.out.println("создан хрупкий бокс");
+            System.out.println("создан хрупкий бокс id:" + getId());
         }
     }
 

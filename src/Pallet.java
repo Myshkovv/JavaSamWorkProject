@@ -7,11 +7,10 @@ public class Pallet<T extends Box>  {
 
     private final Box[] boxes;
 
-    public Pallet(String id, int volume, int capacity){
+    public Pallet(String id, PalletType palletType, double maxVolume){
         this.id = id;
-        maxVolume = volume;
-        this.boxes = new Box[capacity];
-
+        this.maxVolume = maxVolume;
+        this.boxes = new Box[palletType.getCapacity()];
     }
 
     public boolean isFull(){
@@ -24,7 +23,7 @@ public class Pallet<T extends Box>  {
             isFull = true;
             return false;
         }
-        if (count > boxes.length) {
+        if (count > boxes.length-1) {
             isFull = true;
             return false;
 
@@ -57,4 +56,7 @@ public class Pallet<T extends Box>  {
     }
 
 
+    public String getId() {
+        return id;
+    }
 }
