@@ -27,6 +27,8 @@ public abstract class Box {
         return height;
     }
 
+    public abstract String getType();
+
     public double getVolume() {
         return volume;
     }
@@ -34,7 +36,5 @@ public abstract class Box {
     public int getId() {
         return id;
     }
-
-    // длина высота ширина, узнавать обьем
 
 }

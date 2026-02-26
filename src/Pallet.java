@@ -1,11 +1,11 @@
 public class Pallet<T extends Box>  {
     private final String id;
     private double maxVolume;
-    double boxesVolume;
-    private int count;
+    double boxesVolume = 0;
+    private int count = 0;
     private boolean isFull = false;
 
-    private final Box[] boxes;
+    private Box[] boxes;
 
     public Pallet(String id, PalletType palletType, double maxVolume){
         this.id = id;
@@ -23,7 +23,7 @@ public class Pallet<T extends Box>  {
             isFull = true;
             return false;
         }
-        if (count > boxes.length-1) {
+        if (count >= boxes.length) {
             isFull = true;
             return false;
 
@@ -38,13 +38,16 @@ public class Pallet<T extends Box>  {
         return true;
     }
 
-    public boolean getBox(int index){
-        for (int i = 0; i< index; i++){
-            if (boxes[i] == null){
-                return false;
-            }
-        }
-        return true;
+    public Box getBox(int index){
+        return boxes[index];
+    }
+
+    public int getCount(){
+        return count;
+    }
+
+    public Box[] getBoxes(){
+        return boxes;
     }
 
     public double getVolume() {
@@ -55,8 +58,35 @@ public class Pallet<T extends Box>  {
         return maxVolume-boxesVolume;
     }
 
+    public void deleteBox(int indexToRemove){
+        if (indexToRemove < 0 || indexToRemove >= boxes.length) {
+            return;
+        }
+
+        for (int i = indexToRemove; i< boxes.length-1; i++){
+            boxes[i] = boxes[i+1];
+        }
+        boxes[boxes.length-1] = null;
+        count--;
+
+    }
 
     public String getId() {
         return id;
+    }
+
+    public void sort(){
+        int lastIndex = count-1;
+        while (lastIndex > 0){
+            for (int i = 0; i < lastIndex; i++){
+                if (boxes[i].getVolume() > boxes[i+1].getVolume()){
+                    Box transferBox = boxes[i];
+                    boxes[i] = boxes[i+1];
+                    boxes[i+1] = transferBox;
+                }
+
+            }
+            lastIndex --;
+        }
     }
 }

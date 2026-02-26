@@ -3,6 +3,8 @@ public class StandartBox extends Box{
     double weight;
     private static int MAX_VOLUME = 500;
     private static int MIN_VOLUME = 100;
+    private BoxType boxType = BoxType.STANDART;
+
 
     public StandartBox(double length, double width, double height, double weight ) {
         super(length, width, height);
@@ -10,12 +12,12 @@ public class StandartBox extends Box{
             throw new IllegalArgumentException("Недопустимый обьем");
         } else {
             this.weight = weight;
-            System.out.println("создан стандарт бокс id:" + getId());
+//            System.out.println("создан стандарт бокс id:" + getId());
         }
-
-
     }
 
-
+    public String getType(){
+        return boxType.getName();
+    }
 
 }

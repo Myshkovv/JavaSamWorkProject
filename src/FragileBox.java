@@ -3,6 +3,7 @@ public class FragileBox extends Box{
     private static int MAX_VOLUME = 100;
     private double volume;
     private Fragile fragile;
+    private BoxType boxType = BoxType.FRAGILE;
 
     public FragileBox(double length, double width, double height, Fragile fragile) {
         super(length, width, height);
@@ -11,8 +12,12 @@ public class FragileBox extends Box{
             throw new IllegalArgumentException("Недопустимый обьем");
         } else {
             this.volume = length * height * width;
-            System.out.println("создан хрупкий бокс id:" + getId());
+//            System.out.println("создан хрупкий бокс id:" + getId());
         }
+    }
+
+    public String getType(){
+        return boxType.getName();
     }
 
 
