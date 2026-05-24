@@ -6,7 +6,7 @@ public class AppConfig implements Serializable {
     @DefaultValue(value = "8000")
     @MaxValue(9000)
     private int part;
-    @DefaultValue("10")
+    @DefaultValue("4")
     @MaxValue(5)
     private int threads;
 
